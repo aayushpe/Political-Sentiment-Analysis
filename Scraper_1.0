@@ -1,0 +1,85 @@
+import requests
+from bs4 import BeautifulSoup
+
+# URL of the page to scrape
+url = "https://www.allsides.com/story/politics-senate-renews-fisa-bipartisan-support-and-opposition"
+
+# Send a GET request to the URL
+response = requests.get(url)
+
+# Parse the HTML content of the page
+soup = BeautifulSoup(response.text, "html.parser")
+
+# Find the article content element
+from_the_left = soup.find("div", class_="news-item left")
+
+if from_the_left:
+    
+    paragraphs = from_the_left.find_all("a")
+    article_title = paragraphs[0].text.strip()
+
+    #print("Title:", title)
+    print("Article Title:")
+    print(article_title)
+
+    img_tag = from_the_left.find_all('img', {'title': True})
+    if img_tag:
+        left_rating = [word['title'] for word in img_tag]
+        print("\nBIAS:")
+        print(left_rating)
+    else:
+        print("No img tag with title attribute found.")
+
+
+#gets article body summarization from AllSides
+    '''
+    article_body = soup.find("div", class_="body-contents")
+    if article_body:
+        body = article_body.find_all("p")
+        body_text = "\n".join([p.text.strip() for p in body])
+
+        print("\nBody contents:")
+        print(body_text)
+    else:
+        print("Couldn't print article body")
+    '''
+else:
+    print("Left item not found.")
+
+
+from_the_center = soup.find("div", class_="news-item center")
+
+if from_the_center:
+    title_sections = from_the_center.find_all("a")
+    article_title = title_sections[0].text.strip()
+
+    print("\nArticle Title:")
+    print(article_title)
+
+    img_tag = from_the_center.find_all('img', {'title': True})
+    if img_tag:
+        center_rating = [word['title'] for word in img_tag]
+        print("\nBIAS:")
+        print(center_rating)
+else:
+    print("No Center Found")
+
+
+from_the_right = soup.find("div", class_="news-item right")
+
+if from_the_right:
+    title_sections = from_the_right.find_all("a")
+    article_title = title_sections[0].text.strip()
+
+    print("\nArticle Title:")
+    print(article_title)
+
+    img_tag = from_the_right.find_all('img', {'title': True})
+    if img_tag:
+        center_rating = [word['title'] for word in img_tag]
+        print("\nBIAS:")
+        print(center_rating)
+else:
+    print("No Right found")
+    
+
