@@ -59,4 +59,5 @@ The model demonstrates a commendable accuracy rate of 75% in distinguishing whet
 ## In-Depth Report
 
 For a detailed explanation of the project, including related works, data preprocessing, model architecture, and experimental results, please refer to the 
-Project-Report.pdf](https://github.com/user-attachments/files/15934757/Project-Report.pdf)
+[Project-Report.pdf](https://github.com/user-attachments/files/15934759/Project-Report.pdf)
+
