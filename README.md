@@ -11,7 +11,6 @@ The sentiment analysis model is implemented using a feed-forward neural network 
 ## Files in the Repository
 
 - `Political_Analysis.ipynb`: The Jupyter Notebook containing the code for data preprocessing, model training, and evaluation.
-- `Project-Report.pdf`: The detailed project report, including methodology, experiments, and results.
 
 ## Dataset
 
@@ -54,7 +53,7 @@ The model was evaluated on a test set of 17,000 tweets, achieving an accuracy of
 
 ## Conclusion
 
-The model demonstrates a commendable accuracy rate of 75% in distinguishing whether a given political tweet originated from a Republican or Democrat. However, the dataset's narrow scope may limit the model's applicability to broader political texts. Further exploration and refinement are needed to enhance its generalizability.
+The model demonstrates a commendable accuracy rate of 84% in distinguishing whether a given political tweet originated from a Republican or Democrat. However, the dataset's narrow scope may limit the model's applicability to broader political texts. Further exploration and refinement are needed to enhance its generalizability.
 
 ## In-Depth Report
 
